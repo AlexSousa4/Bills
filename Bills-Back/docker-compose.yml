@@ -6,7 +6,7 @@ services:
     restart: always
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: 'bills'
+      MONGO_INITDB_ROOT_USERNAME: 'bills-api'
       MONGO_INITDB_ROOT_PASSWORD: 'mamu44'
     ports:
       - '27017:27017'
@@ -16,7 +16,7 @@ services:
   app:
     depends_on:
       - mongo
-    container_name: bills-api
+    container_name: bills
     build:
       context: .
       dockerfile: Dockerfile
